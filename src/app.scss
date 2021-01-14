@@ -1,0 +1,43 @@
+form {
+    width: 100%;
+    > div {
+        width: 100%;
+        > input[type="text"] {
+            border: 1px solid darkblue;
+            height: 40px;
+            width: 100%;
+            padding: 10px;
+        }
+        &:hover {
+            box-shadow: 0px 0px 7px blue;
+        }
+    }
+}
+
+p > strong {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 640px) {
+    section {
+        > select {
+            border: black 1px solid;
+        }
+        label {
+            font-size: 14px;
+            color: black;
+        }
+    }
+}
+
+@media screen and (max-width: 639px) {
+    section {
+        > select {
+            border: black 1px solid;
+        }
+        label {
+            font-size: 12px;
+            color: black;
+        }
+    }
+}
