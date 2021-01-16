@@ -1,41 +1,97 @@
-import React, { useEffect } from "react";
-import { AlignJustify } from "react-feather";
-import M from "materialize-css";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { AlignJustify, X } from "react-feather";
 
-export default function Navigation() {
-    useEffect(() => {
-        document.addEventListener("DOMContentLoaded", function () {
-            var elems = document.querySelectorAll(".sidenav");
-            var instances = M.Sidenav.init(elems, {});
+
+const Navbar = () => {
+    const initState = {
+        show: false,
+    };
+
+    const [state, setState] = useState(initState);
+    const toggle = () => {
+        setState({
+            show: !state.show,
         });
-    }, []);
+    };
+
+
+    //modal that shows on small screen when the user clicks the bar icon on small screen
+    const MobileNavLink = () => {
+        
+        const mobileLink = (
+            <div id="modParent">
+
+                <ul id="modUl">
+                    <li className="linka" onClick={toggle}>
+                        <X size="24" color="white" />
+                    </li>
+                    <li>
+                        <NavLink className="navli" to="/">
+                            home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink className="navli" to="/signUP">
+                            SignUp
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink className="navli" to="/login">
+                            Login
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+        );
+        
+        let dropdown;
+        const x = document.getElementById("mobile");
+        if (state.show === true) {
+            return (dropdown = mobileLink);
+        }
+    };
 
     return (
-        <div>
-            <nav>
-                <div className="nav-wrapper blue darken-4">
-                    <a
-                        href="#"
-                        data-target="slide-out"
-                        className="sidenav-trigger show-on-large show-on-small show-on-medium-and-up left">
-                        <AlignJustify />
-                    </a>
-                    <a href="#" className="brand-logo center" center>
-                        Records
-                    </a>
-                </div>
-            </nav>
+        <div id="parentDiv">
 
-            <ul id="slide-out" className="sidenav">
-                <li>
-                    <a className="subheader">Subheader</a>
+            <ul id="desktop" >
+                <a href="#">Records</a>
+                <li className="link1">
+                    <NavLink className="navlink" to="/">
+                        home
+                    </NavLink>
                 </li>
                 <li>
-                    <a className="waves-effect" href="#!">
-                        Third Link With Waves
-                    </a>
+                    <NavLink className="navlink" to="/signUP">
+                        SignUp
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className="navlink" to="/login">
+                        Login
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className="navlink" to="/#">
+                        Categories
+                    </NavLink>
+                </li>
+            </ul>
+
+            {MobileNavLink()}
+
+            <ul id="mobile" >
+                <a style={{ fontSize: "23px" }} href="#">
+                    Records
+                </a>
+
+                <li onClick={toggle}>
+                    <AlignJustify size="24" color="white" />
                 </li>
             </ul>
         </div>
     );
-}
+};
+
+export default Navbar;

@@ -1,0 +1,83 @@
+// for large screens
+@media screen and (min-width: 720px) {
+    div > ul#mobile {
+        display: none;
+    }
+
+    .navbar2 {
+        background: linear-gradient(rgba(0, 0, 0, 0.576), rgba(0, 0, 0, 0.576)),
+            url("./image/Record.jpg");
+        margin-top: 0%;
+        padding: 0.5% 0;
+    }
+    div > ul#desktop {
+        margin-left: 60px;
+        display: flex;
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 35px;
+            margin-right: 20px;
+        }
+        li {
+            list-style: none;
+            margin: 21px 7px 0 7px;
+        }
+        .navlink {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+    }
+}
+
+// for small screen
+
+@media screen and (max-width: 719px) {
+    .navbar2 {
+        background: linear-gradient(rgba(0, 0, 0, 0.576), rgba(0, 0, 0, 0.576)),
+            url("./image/Record.jpg");
+        margin-top: 0%;
+        padding: 0.5% 0;
+    }
+
+    div > ul#desktop {
+        display: none;
+    }
+
+    div > ul#mobile {
+        display: flex;
+        padding: 0 15px;
+        a {
+            color: white;
+            margin-right: auto;
+        }
+        li {
+            margin-top: 6px;
+        }
+    }
+    div#parentDiv {
+        position: relative;
+        > div#modParent {
+            position: absolute;
+            top: 0%;
+            background-color: rgba(26, 11, 6, 0.967);
+            padding: 15px 10px;
+            width: 100%;
+            z-index: 1;
+            margin-top: -15px;
+            ul {
+                display: flex;
+                width: 100%;
+            }
+            li {
+                list-style: none;
+                margin: 0px 10px;
+                > .navli {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

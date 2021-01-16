@@ -1,43 +1,213 @@
-form {
-    width: 100%;
-    > div {
-        width: 100%;
-        > input[type="text"] {
-            border: 1px solid darkblue;
-            height: 40px;
-            width: 100%;
-            padding: 10px;
-        }
-        &:hover {
-            box-shadow: 0px 0px 7px blue;
-        }
-    }
+@import "./scss/navbar";
+
+body,
+html {
+    font-family: "Spartan", sans-serif;
+    background-color: rgba(228, 227, 225, 0.535);
+}
+
+.contain {
+    padding: 2% 4%;
+    margin-top: -20px;
+    background-color: rgba(255, 255, 255, 0.987);
 }
 
 p > strong {
     font-weight: bold;
 }
 
-@media screen and (min-width: 640px) {
-    section {
-        > select {
-            border: black 1px solid;
+//pagination style
+div > ul.white-text {
+    display: flex;
+    justify-content: center;
+    li {
+        margin: 0 5px;
+    }
+}
+
+//responsive styling
+@media screen and (min-width: 641px) {
+    //rightSide banner stylng
+    .rightSide {
+        background: linear-gradient(rgba(0, 0, 0, 0.576), rgba(0, 0, 0, 0.576)),
+            url("./image/Record.jpg");
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        height: 400px;
+    }
+
+    //card modal popout style
+    .contain-card {
+        width: 100%;
+    }
+
+    //left side style on desktop
+
+    #leftside {
+        padding: 10% 0 0 7%;
+        h4 {
+            font-size: 35px;
+            font-weight: bold;
         }
-        label {
-            font-size: 14px;
-            color: black;
+        p {
+            font-size: 13px;
+        }
+    }
+
+    select {
+        border-radius: 30px;
+        height: 35px;
+        width: 100%;
+    }
+
+    #search {
+        padding: 6% 12%;
+    }
+    label {
+        font-size: 14px;
+        color: black;
+    }
+    #space {
+        display: flex;
+        li.keys {
+            width: 40%;
+            font-weight: bold;
+            font-size: 12px;
+            > strong {
+                font-weight: bold;
+            }
+        }
+        li.value {
+            width: 60%;
+            font-size: 12px;
+        }
+    }
+    //card styling
+    .cards {
+        background: white;
+        transition: all 0.3s;
+        box-shadow: 1px 1px 5px black;
+        border-radius: 0px;
+        &:hover {
+            transform: scale(1.01, 1.01);
+        }
+        h4 {
+            font-size: 25px;
+        }
+    }
+
+    //button style
+    #button-colour {
+        background-color: rgba(51, 23, 12, 0.953);
+        color: white;
+        border-radius: 0px;
+        width: 100%;
+    }
+
+    //style for the search box
+    form {
+        width: 100%;
+
+        > div {
+            width: 100%;
+
+            > input[type="text"] {
+                border-radius: 40px;
+                height: 35px;
+                width: 100%;
+                padding: 2px 10px;
+                border: none;
+                background-image: url("./image/search.png");
+                background-size: 5% 50%;
+                background-position: 98% center;
+                background-repeat: no-repeat;
+            }
+            &:hover {
+                box-shadow: 0px 0px 7px blue;
+            }
         }
     }
 }
 
-@media screen and (max-width: 639px) {
-    section {
-        > select {
-            border: black 1px solid;
+@media screen and (max-width: 640px) {
+    .rightSide {
+        background: linear-gradient(rgba(0, 0, 0, 0.576), rgba(0, 0, 0, 0.576)),
+            url("./image/Record.jpg") no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        height: 320px;
+    }
+
+    select {
+        border-radius: 40px;
+        height: 35px;
+    }
+
+    //card modal popout style
+    .contain-card {
+        width: 100%;
+    }
+
+    label {
+        font-size: 10px;
+        color: black;
+    }
+
+    //button style
+    #button-colour {
+        background-color: rgba(51, 23, 12, 0.953);
+        color: white;
+        border-radius: 0px;
+        width: 100%;
+    }
+
+    //card styling
+
+    #space {
+        display: flex;
+        li.keys {
+            width: 40%;
+            font-size: 10px;
+            > strong {
+                font-weight: bold;
+            }
         }
-        label {
-            font-size: 12px;
-            color: black;
+        li.value {
+            width: 60%;
+            font-size: 10px;
+        }
+    }
+    .cards {
+        background: white;
+        transition: all 0.3s;
+        box-shadow: 1px 1px 5px black;
+        border-radius: 0px;
+        &:hover {
+            transform: scale(1.01, 1.01);
+        }
+        h4 {
+            font-size: 40px;
+        }
+    }
+    //style for the search box
+    form {
+        width: 100%;
+        > div {
+            width: 100%;
+            > input[type="text"] {
+                border-radius: 40px;
+                height: 35px;
+                width: 100%;
+                padding: 2px 10px;
+                border: none;
+                background-image: url("./image/search.png");
+                background-size: 5% 50%;
+                background-position: 98% center;
+                background-repeat: no-repeat;
+            }
+            &:hover {
+                box-shadow: 0px 0px 7px blue;
+            }
         }
     }
 }

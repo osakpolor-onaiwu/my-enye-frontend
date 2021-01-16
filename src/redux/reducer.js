@@ -11,7 +11,6 @@ const Reducer = (state = initialState, action) => {
             };
 
         case "GET RECORD ERR":
-            console.log(action.err);
             return { ...state };
 
         default:
