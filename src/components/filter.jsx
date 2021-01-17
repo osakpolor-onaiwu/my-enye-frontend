@@ -1,25 +1,25 @@
 import React from "react";
 import { Row, Col } from "react-materialize";
 import Pagination from "./pagination";
-import RecordView from "./recordview" ;
+import RecordView from "./recordview";
 
-const Output = ({
-    records,
-    filter,
-}) => {
-
+const Output = ({ records, filter }) => {
     //returns values based on the state of the home component
     //it controls the search and filters
     const filters = () => {
-      
-
         switch (filter) {
-
             //if the state is empty
             case "": {
                 const all = records ? (
                     records.map((record) => {
-                        return <RecordView key={record.UserName} record={record} />;
+                        return (
+                            <div key={record.UserName}>
+                                <RecordView
+                                   
+                                    record={record}
+                                />
+                            </div>
+                        );
                     })
                 ) : (
                     <div>loading Records ....</div>
@@ -34,7 +34,11 @@ const Output = ({
                     });
                     const Males = male ? (
                         male.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -50,7 +54,11 @@ const Output = ({
                     });
                     const Females = female ? (
                         female.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -66,7 +74,11 @@ const Output = ({
                     });
                     const Others = other ? (
                         other.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -82,7 +94,11 @@ const Output = ({
                     });
                     const MoneyOrder = money ? (
                         money.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -98,7 +114,11 @@ const Output = ({
                     });
                     const Checks = check ? (
                         check.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -114,7 +134,11 @@ const Output = ({
                     });
                     const CreditCard = Cards ? (
                         Cards.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -130,7 +154,11 @@ const Output = ({
                     });
                     const Paypals = Paypal ? (
                         Paypal.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -144,7 +172,11 @@ const Output = ({
                 {
                     const all = records ? (
                         records.map((record) => {
-                            return <RecordView key={record.UserName} record={record} />;
+                            return (
+                                <div key={record.UserName}>
+                                    <RecordView record={record} />
+                                </div>
+                            );
                         })
                     ) : (
                         <div>loading Records ....</div>
@@ -172,41 +204,38 @@ const Output = ({
                                 })
                                 .join();
 
-                            const fullName=record.FirstName+record.LastName
-                           
-                            return (
-                                fullName.match(searchValue) 
-                            );
+                            const fullName = record.FirstName + record.LastName;
+
+                            return fullName.match(searchValue);
                         });
                         const SearchResult = Search ? (
                             Search.map((record) => {
                                 return (
-                                 <div key={record.UserName}>   
-                                
-                                <RecordView key={record.UserName} record={record} />
-                                </div>
-                                )
+                                    <div key={record.UserName}>
+                                        <RecordView record={record} />
+                                    </div>
+                                );
                             })
                         ) : (
-                            <h2 className='black-text'>No Record Matches {filter}</h2>
+                            <h2 className="black-text">
+                                No Record Matches {filter}
+                            </h2>
                         );
                         return (
                             <div>
-                            <h5 className='black-text'>found {Search.length} results</h5>
-                            {SearchResult}
-                            </div>);
+                                <h5 className="black-text">
+                                    found {Search.length} results
+                                </h5>
+                                {SearchResult}
+                            </div>
+                        );
                     }
                 }
                 break;
         }
     };
 
-    return (
-        <div>
-            
-            {filters()}
-        </div>
-    );
+    return <div>{filters()}</div>;
 };
 
 export default Output;

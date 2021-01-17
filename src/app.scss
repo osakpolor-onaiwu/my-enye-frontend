@@ -4,6 +4,11 @@ body,
 html {
     font-family: "Spartan", sans-serif;
     background-color: rgba(228, 227, 225, 0.535);
+    scroll-behavior: auto;
+}
+
+main#home {
+    position: relative;
 }
 
 .contain {
@@ -39,6 +44,15 @@ div > ul.white-text {
     //card modal popout style
     .contain-card {
         width: 100%;
+    }
+
+    #modalContainer {
+        position: absolute;
+        z-index: 2;
+        left: 5%;
+        width: 80%;
+        margin: 0 5%;
+        top: 15%;
     }
 
     //left side style on desktop
@@ -146,6 +160,16 @@ div > ul.white-text {
     //card modal popout style
     .contain-card {
         width: 100%;
+    }
+
+    //modal
+    #modalContainer {
+        position: absolute;
+        z-index: 2;
+        left: 8%;
+        width: 80%;
+        margin: 0 5%;
+        top: 2%;
     }
 
     label {

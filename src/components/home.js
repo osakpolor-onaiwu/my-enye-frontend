@@ -42,7 +42,7 @@ export class Home extends Component {
         const currentPosts = record.slice(indexOfFirstPost, indexOfLastPost);
 
         return (
-            <main>
+            <main id="home">
                 <Row>
                     <Col s={12} l={7} className="rightSide">
                         <Row>
